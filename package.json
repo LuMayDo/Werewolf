@@ -1,0 +1,23 @@
+{
+  "name": "werwolf-project",
+  "version": "0.0.1",
+  "description": "A little project to create a werewolf discord bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuMayDo/Werewolf.git"
+  },
+  "author": "LuMayDo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuMayDo/Werewolf/issues"
+  },
+  "homepage": "https://github.com/LuMayDo/Werewolf#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "yaml": "^1.10.2"
+  }
+}
