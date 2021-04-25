@@ -1,6 +1,6 @@
 const 
     Discord = require('discord.js'),
-    fs = require('fs'),
+    fs = require('fs')
 
 const 
     client = new Discord.Client(),
@@ -16,13 +16,13 @@ const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith(
 })
 
 
-
 client.once('ready', () => {
     console.log('Werewolf Bot online')
 
-    client.user.setActivity(`for a game to start | use ${prefix} help`, {
+    client.user.setActivity(`${prefix} help`, {
         type: 'WATCHING'
     })
+
 })
 
 client.on('message', message => {
