@@ -1,3 +1,5 @@
+const { roles } = require('../config/config.json')
+
 module.exports = {
     name: "assign-roles",
     description: "Assigns roles to every user.",
@@ -5,20 +7,21 @@ module.exports = {
         const voiceChannel = message.member.voice.channel;
         if (!voiceChannel) return message.channel.send('You need to be in a voice channel to assign roles!')
 
-        let roles = [
-            'Werewolf',
-            'Werewolf',
-            'Witch',
-            'Guardian',
-            'Amor',
-            'Döner Man',
-        ]
+        let customRoles = []
+
+        roles.forEach(role => {
+            if (role.defaultCount) {
+                for (let i = 0; i < role.defaultCount; i++)
+                    customRoles.push(role.name)
+            }
+        })
 
         try {
             const members = voiceChannel.members.filter(member => member !== message.member)
 
-            let roleList = '',
-                randomRoles = roles.sort(() => Math.random() - 0.5)
+            let 
+                roleList = '',
+                randomRoles = customRoles.sort(() => Math.random() - 0.5)
 
             members.forEach(member => {
                 let role = randomRoles.shift()

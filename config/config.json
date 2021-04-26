@@ -1,3 +1,24 @@
 {
-    "prefix": "!ww"
+    "prefix": "!ww",
+    "roles": [
+        {
+            "name": "Werewolf",
+            "defaultCount": 2
+        },
+        {
+            "name": "Witch"
+        },
+        {
+            "name": "Guardian"
+        },
+        {
+            "name": "Amor"
+        },
+        {
+            "name": "Jester"
+        },
+        {
+            "name": "Döner Man"
+        }
+    ]
 }
