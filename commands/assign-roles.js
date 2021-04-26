@@ -15,7 +15,7 @@ module.exports = {
         ]
 
         try {
-            const members = voiceChannel.members.filter(member => member !== message.member);
+            const members = voiceChannel.members.filter(member => member !== message.member)
 
             let roleList = '',
                 randomRoles = roles.sort(() => Math.random() - 0.5)
@@ -23,10 +23,11 @@ module.exports = {
             members.forEach(member => {
                 let role = randomRoles.shift()
 
-                roleList += `${member.displayName} - ${role}`
+                roleList += `${member.displayName} - ${role}\n`
                 member.send(`You are ${role}`)
             })
 
+            message.author.send(roleList)
             message.channel.send('Everybody should get a role.')
 
         } catch (err) {
