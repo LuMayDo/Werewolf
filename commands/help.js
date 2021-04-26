@@ -29,8 +29,16 @@ module.exports = {
                 },
                 fields: [
                     {
+                        name: 'Basic Usage',
+                        value: 'Use commands starting `' + prefix + '`'
+                    },
+                    {
                         name: 'Commands',
                         value: commandString
+                    },
+                    {
+                        name: 'Detailed Help',
+                        value: 'For more information use `' + `${prefix} ${this.name} <command>` + '`'
                     }
                 ]
             }
