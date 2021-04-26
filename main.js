@@ -4,7 +4,7 @@ const
 
 const 
     client = new Discord.Client(),
-    { appToken } = require('./config/secrets.json'),
+    { appToken } = process.env.appToken,
     { prefix } = require('./config/config.json')
 
 client.commands = new Discord.Collection()
