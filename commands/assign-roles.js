@@ -9,12 +9,18 @@ module.exports = {
 
         let customRoles = []
 
-        roles.forEach(role => {
-            let roleCount = (role.defaultCount)? role.defaultCount : 1
+        try {
+            roles.forEach(role => {
+                let roleCount = (role.defaultCount)? role.defaultCount : 1
 
-            for (let i = 0; i < roleCount; i++)
-                customRoles.push(role.name)
-        })
+                for (let i = 0; i < roleCount; i++)
+                    customRoles.push(role.name)
+            })
+        } catch (err) {
+            message.send('Roles can\'t be collected')
+            console.log(err)
+            return
+        }
 
         try {
             const members = voiceChannel.members.filter(member => member !== message.member)
