@@ -1,5 +1,22 @@
 
+# Main goals of the bot
 Project Goals:
   ☐ Control game completely automatic
+  ☐ Record villagers deaths
+  ☐ Assist narrator with several commands
+  ☐ Whisper channel between werewolves
+
+# Commands to assist the narrator
+Assist Narrator Goals:
   ☐ Mute villagers on command
   ☐ Deactivate cameras on command
+  ☐ Automate Cupid and lovers couple with command
+
+# Sub-goals for automating cupid
+Cupid Goals:
+  ☐ Cupid notifies bot which villagers to make into lovers couple
+  ☐ Bot notifies lovers couple of each roles
+
+# Sub-goals for recording deaths
+'Death Detection' Goals:
+  ?
