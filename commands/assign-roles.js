@@ -6,7 +6,7 @@ module.exports = {
 	usage:
 		'Assign every member of the same voice channel as the calling user by using `!ww assign-roles`. ' +
 		'Every user gets a direct message including their assigned role.',
-	examples: [''],
+	examples: [],
 	execute(message, args) {
 		const voiceChannel = message.member.voice.channel
 		if (!voiceChannel)

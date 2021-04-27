@@ -61,6 +61,8 @@ module.exports = {
 		} else {
 			const commandForHelp = message.client.commands.get(args[0].toLowerCase())
 
+			console.log(commandForHelp.examples.length)
+
 			const helpEmbed = {
 				color: 0x00000,
 				timestamp: message.createdAt,
@@ -75,7 +77,7 @@ module.exports = {
 					},
 					{
 						name: 'Examples',
-						value: commandForHelp.length
+						value: commandForHelp.examples.length
 							? commandForHelp.examples.join('\n')
 							: 'No examples for this command.',
 					},

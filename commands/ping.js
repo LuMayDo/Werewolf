@@ -2,7 +2,7 @@ module.exports = {
 	name: 'ping',
 	description: 'Tests the bot.',
 	usage: '',
-	examples: [''],
+	examples: [],
 	execute(message, args) {
 		message.channel.send('Whats up!')
 	},
