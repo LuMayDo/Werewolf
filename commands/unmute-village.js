@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'mute-village',
-	description: 'Mutes all villagers',
+	name: 'unmute-village',
+	description: 'Unmutes every villager',
 	execute(message, args) {
 		const voiceChannel = message.member.voice.channel
 		if (!voiceChannel)
@@ -8,7 +8,7 @@ module.exports = {
 
 		const members = voiceChannel.members.filter(member => member !== message.member)
 		members.forEach(member => {
-			member.voice.setMute(true, 'Night arrived. You went to sleep.')
+			member.voice.setMute(false, 'Morning arrived. You woke up.')
 		})
 	},
 }
