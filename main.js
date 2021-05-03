@@ -56,6 +56,10 @@ let onDM = message => {
 	if (!global.werewolves.includes(message.author)) return
 
 	message.channel.send('You are indeed a Werewolf')
+
+	global.werewolves
+		.filter(werwolf => werwolf !== message.author)
+		.forEach(werewolf => werewolf.createDM().send(`${message.author} said: ${message.content}`))
 }
 
 client.login(appToken)
