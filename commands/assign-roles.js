@@ -55,7 +55,13 @@ module.exports = {
 				if (role.toLowerCase() === 'werewolf') global.werewolves.push(member.user)
 
 				roleList += `${member.displayName} - ${role}\n`
-				member.send(`You are ${role}`)
+				member.send(`You are ${role}.`)
+			})
+
+			global.werewolves.forEach(werewolf => {
+				const otherWerewolves = global.werewolves.filter(player => player !== werewolf)
+
+				werewolf.send(`${otherWerewolves.join(', ')} share your destiny.`)
 			})
 
 			message.author.send(roleList)

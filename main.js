@@ -59,7 +59,7 @@ let onDM = message => {
 
 	global.werewolves
 		.filter(werwolf => werwolf !== message.author)
-		.forEach(werewolf => werewolf.createDM().send(`${message.author} said: ${message.content}`))
+		.forEach(werewolf => werewolf.send(`${message.author} said: ${message.content}`))
 }
 
 client.login(appToken)
