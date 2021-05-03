@@ -8,26 +8,37 @@ module.exports = {
 		'Every user gets a direct message including their assigned role.',
 	examples: [],
 	execute(message, args) {
-		const voiceChannel = message.member.voice.channel
+		const voiceChannel = message.member.voice.channel,
+			members = voiceChannel.members.filter(member => member !== message.member)
+
 		if (!voiceChannel)
 			return message.channel.send('You need to be in a voice channel to assign roles!')
 
 		let customRoles = []
 
-		try {
-			roles.forEach(role => {
-				let roleCount = role.defaultCount ? role.defaultCount : 1
+		if (args.length < 1) {
+			try {
+				roles.forEach(role => {
+					let roleCount = role.defaultCount ? role.defaultCount : 1
 
-				for (let i = 0; i < roleCount; i++) customRoles.push(role.name)
-			})
-		} catch (err) {
-			message.send("Roles can't be collected")
-			console.log(err)
-			return
+					for (let i = 0; i < roleCount; i++) customRoles.push(role.name)
+				})
+			} catch (err) {
+				message.send("Roles can't be collected")
+				console.log(err)
+				return
+			}
+		} else {
+			customRoles = args
+
+			if (customRoles.length < members.size) {
+				for (let i = 0; i < members.size - customRoles.length; i++)
+					customRoles.push('Dorftrottel')
+			}
 		}
 
 		try {
-			const members = voiceChannel.members //.filter(member => member !== message.member)
+			const members = voiceChannel.members.filter(member => member !== message.member)
 
 			let roleList = '',
 				randomRoles = customRoles.sort(() => Math.random() - 0.5)
