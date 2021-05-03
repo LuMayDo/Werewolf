@@ -4,15 +4,15 @@ Project Goals:
   ☐ Control game completely automatic
   ☐ Record villagers deaths
   ☐ Assist narrator with several commands
-  ☐ Whisper channel between werewolves
+  ✔ Whisper channel between werewolves @done(21-05-03 19:21)
 
 # Commands to assist the narrator
 Assist Narrator Goals:
-  ☐ Assign roles user defined roles
-  ☐ Mute villagers on command
+  ✔ Assign roles user defined roles @done(21-05-03 19:20)
+  ✔ Mute villagers on command @done(21-05-03 19:20)
   ☐ Deactivate cameras on command
   ☐ Automate Cupid and lovers couple with command
-  ☐ Notify werewolves who the other werewolf is
+  ✔ Notify werewolves who the other werewolf is @done(21-05-03 19:21)
 
 # Sub-goals for automating cupid
 Cupid Goals:
