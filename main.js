@@ -22,14 +22,22 @@ client.once('ready', () => {
 	console.log('Werewolf Bot online')
 
 	client.user.setActivity(`${prefix} help`, {
-		type: 'WATCHING',
+		type: 'LISTENING',
 	})
+
+	global.werewolves = new Array()
 })
 
 client.on('message', message => {
-	if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot)
+	if (message.channel.type === 'dm') {
+		onDM(message)
 		return
+	} else if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot) return
 
+	onChannel(message)
+})
+
+let onChannel = message => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/)
 	const command = args.shift().toLowerCase()
 
@@ -42,6 +50,16 @@ client.on('message', message => {
 		message.channel.send("I don't know what to do with that.")
 		console.log(err)
 	}
-})
+}
+
+let onDM = message => {
+	if (!global.werewolves.includes(message.author)) return
+
+	message.channel.send('You are indeed a Werewolf')
+
+	global.werewolves
+		.filter(werwolf => werwolf !== message.author)
+		.forEach(werewolf => werewolf.createDM().send(`${message.author} said: ${message.content}`))
+}
 
 client.login(appToken)

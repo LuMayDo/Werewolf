@@ -38,11 +38,15 @@ module.exports = {
 		}
 
 		try {
+			const members = voiceChannel.members.filter(member => member !== message.member)
+
 			let roleList = '',
 				randomRoles = customRoles.sort(() => Math.random() - 0.5)
 
 			members.forEach(member => {
 				let role = randomRoles.shift()
+
+				if (role.toLowerCase() === 'werewolf') global.werewolves.push(member.user)
 
 				roleList += `${member.displayName} - ${role}\n`
 				member.send(`You are ${role}`)
