@@ -1,6 +1,8 @@
 module.exports = {
 	name: 'unmute-village',
 	description: 'Unmutes every villager',
+	usage: 'End the night and unmute every villager.',
+	examples: ['`!ww unmute-village` ends server mute on every member of the voice channel.'],
 	execute(message, args) {
 		const voiceChannel = message.member.voice.channel
 		if (!voiceChannel)
